@@ -3,6 +3,10 @@ package org.plytimebandit.testarea.kotlin
 
 fun main(args: Array<String>) {
 
+    val injector = AppInjector.create()
+    val foo = injector.getInstance(InjectedFoo::class.java)
+    println("The injected text is '${foo.text}'")
+
     val myListTransformed = listMapPrint()
     performingWhen(myListTransformed)
     val name = creatingAndPrintingClass()
